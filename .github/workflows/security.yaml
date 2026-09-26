@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: install govulncheck
         run: go install golang.org/x/vuln/cmd/govulncheck@latest
+      - name: Add Go bin to PATH
+        run: echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
       - name: Run vulnerability check
         run: govulncheck ./...
   gosec:
@@ -22,3 +24,5 @@ jobs:
         run: go install github.com/securego/gosec/v2/cmd/gosec@latest
       - name: Run security scan
         run: gosec ./...
+      - name: Add go bin to path
+        run: echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
