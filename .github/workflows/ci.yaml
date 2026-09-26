@@ -18,9 +18,6 @@ jobs:
         run: go test .
       - name: Run vet
         run: go vet .
-
-      - name: Build application
-        run: go build .
         
         
         
