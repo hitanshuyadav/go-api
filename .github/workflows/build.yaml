@@ -12,4 +12,8 @@ jobs:
       - name: verify image
         run: |
           docker images
+      - name: tag image
+        run: docker image tag go-image:latest hitanshuyadav/go-image:latest
+      
+          
           
