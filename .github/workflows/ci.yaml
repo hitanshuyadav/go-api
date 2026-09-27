@@ -23,6 +23,9 @@ jobs:
         run: go build .
   build:
     uses: ./.github/workflows/build.yaml
+    secrets: 
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_TOKEN: ${{ secrets. DOCKER_TOKEN }}
         
         
         
