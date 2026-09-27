@@ -13,7 +13,13 @@ jobs:
         run: |
           docker images
       - name: tag image
-        run: docker image tag go-image:latest hitanshuyadav/go-image:latest
+        run: docker image tag go-image:latest ${{ secrets.DOCKER_USERNAME }}/go-image:latest
+      - name: push image to dockerhub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.GITHUB_USERNAME }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+        
       
           
           
