@@ -1,0 +1,15 @@
+name: build
+on:
+  workflow_call:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v7
+      - name: build image
+        run: docker build -t go-image .
+      - name: verify image
+        run: |
+          docker images
+          
