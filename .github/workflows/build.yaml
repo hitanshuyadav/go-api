@@ -1,6 +1,11 @@
 name: build
 on:
-  push: 
+  workflow_call:
+    secrets:
+      DOCKER_USERNAME:
+        required: true
+      DOCKER_TOKEN:
+        required: true
 jobs:
   build:
     runs-on: ubuntu-latest
