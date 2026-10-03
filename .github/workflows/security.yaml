@@ -8,9 +8,10 @@ jobs:
       - name: code checkout
         uses: actions/checkout@v4
       - name: set up go language
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
-          go-version:
+          go-version-file: go.mod
+          cache: true
       - name: Add Go bin to PATH
         run: echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
       - name: install govulncheck
@@ -27,6 +28,11 @@ jobs:
     steps:
       - name: code checkout
         uses:  actions/checkout@v4
+      - name: set up go environment
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
       - name: Add go bin to path
         run: echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
       - name: Install gosec
