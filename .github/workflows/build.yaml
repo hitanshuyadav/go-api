@@ -28,7 +28,7 @@ jobs:
 
       - name: image push to dockerhub
         run: |
-          docker push image ${{ secrets.DOCKER_USERNAME }}/go-image:latest
+          docker image push ${{ secrets.DOCKER_USERNAME }}/go-image:latest
         
       
           
