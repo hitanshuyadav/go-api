@@ -1,6 +1,9 @@
 name: CI-pipeline
 on: 
-  workflow_call: 
+  push:
+    branches: ["master"]
+  pull_request:
+   branches: ["master"]
 jobs:
   ci:
     uses: ./.github/workflows/ci.yaml
