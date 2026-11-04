@@ -1,6 +1,7 @@
 name: security
 on:
-  workflow_dispatch: 
+  push:
+    branches: ["master"]
 jobs:
   govulncheck:
     runs-on: ubuntu-latest
