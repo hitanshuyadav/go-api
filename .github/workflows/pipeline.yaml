@@ -1,0 +1,11 @@
+name: CI-pipeline
+on: 
+  workflow_call: 
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yaml
+  security:
+    uses: ./.github/workflows/security.yaml
+  build:
+    needs: [ci, security]
+    uses: ./.github/workflows/build.yaml
