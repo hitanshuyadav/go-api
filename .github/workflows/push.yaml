@@ -1,0 +1,10 @@
+name: pushing image to ecr
+on:
+  workflow_call:
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: find the image
+        run: docker images
+        
