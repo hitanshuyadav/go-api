@@ -26,9 +26,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
-      - name: image push to dockerhub
-        run: |
-          docker image push ${{ secrets.DOCKER_USERNAME }}/api-image:latest
+
         
       
           
