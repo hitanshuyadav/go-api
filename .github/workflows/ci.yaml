@@ -1,6 +1,7 @@
 name: ci
 on:
-  workflow_call: 
+  push:
+    branches: ["master"]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,13 +19,6 @@ jobs:
         run: go test .
       - name: Run vet
         run: go vet .
-      - name: build code
-        run: go build .
-  build:
-    uses: ./.github/workflows/build.yaml
-    secrets: 
-      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      DOCKER_TOKEN: ${{ secrets. DOCKER_TOKEN }}
     
         
         
