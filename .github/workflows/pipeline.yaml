@@ -9,3 +9,6 @@ jobs:
   build:
     needs: [ci, security]
     uses: ./.github/workflows/build.yaml
+  push:
+    needs: [build]
+    uses: ./.github/workflows/push.yaml
