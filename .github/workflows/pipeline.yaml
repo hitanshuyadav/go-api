@@ -14,4 +14,4 @@ jobs:
     uses: ./.github/workflows/build.yaml
   push:
     needs: [build]
-    uses: ./.github/workflows/push.yaml 
+    uses: ./.github/workflows/push.yaml
